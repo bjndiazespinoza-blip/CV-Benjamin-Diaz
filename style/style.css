@@ -1,0 +1,250 @@
+/* --- Variables de Diseño --- */
+:root {
+    --primary-black: #111111;
+    --accent-color: #00e676; /* Verde tecnológico/diseño que resalta sobre negro */
+    --text-dark: #2d3748;
+    --text-muted: #718096;
+    --bg-light: #ffffff;
+    --bg-global: #e2e8f0;
+}
+
+/* --- Estilos Generales y Fondos Modernos --- */
+body {
+    background-color: var(--bg-global);
+    /* Fondo con un patrón grid moderno muy sutil para simular entorno de desarrollo */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* --- Tipografías (Tus Fuentes Elegidas) --- */
+.titulos {
+    font-family: "Merriweather", serif;
+}
+.subtitulos {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 1.5px;
+}
+.parrafos {
+    font-family: "Fira Sans", sans-serif;
+}
+
+/* --- Contenedor Principal (Efecto Elevado) --- */
+.cv-container {
+    max-width: 1050px;
+    margin: 50px auto;
+    background: var(--bg-light);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* --- Header / Top Section --- */
+.top-section {
+    background: var(--primary-black);
+    color: white;
+    padding: 50px;
+    position: relative;
+    border-bottom: 5px solid var(--accent-color);
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.contact-info {
+    font-size: 15px;
+}
+
+.contact-info i {
+    color: var(--accent-color);
+}
+
+/* Iconos Sociales con Animación */
+/* Estado base del contenedor circular */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 230, 118, 0.3);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Estado base del icono (dentro del círculo) */
+.social-icon i {
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease; /* Transición suave también para el color del icono */
+}
+
+/* Efecto Hover: El fondo cambia a verde y se eleva */
+.social-icon:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 230, 118, 0.4);
+}
+
+/* Efecto Hover: Obliga al icono interno a cambiar a negro */
+.social-icon:hover i {
+    color: var(--primary-black) !important;
+}
+
+/* --- Cuerpo del CV --- */
+.content {
+    padding: 50px;
+}
+
+.section-title {
+    font-size: 32px;
+    color: var(--primary-black);
+    margin-bottom: 5px;
+}
+
+.line {
+    width: 45px;
+    height: 4px;
+    background: var(--primary-black);
+    margin-bottom: 25px;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por encima de una sección */
+.layout-column section:hover .line {
+    width: 70px;
+    background: var(--accent-color);
+}
+
+.text-content {
+    color: var(--text-dark);
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* Experiencia laboral y Formación */
+.project-title {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--primary-black);
+    margin: 0;
+}
+
+.institution {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.year {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+ul.text-content li {
+    margin-bottom: 8px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 15px;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f7fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 8px;
+    padding: 12px 5px;
+    transition: all 0.3s ease;
+}
+
+.skill-card i {
+    font-size: 28px;
+    color: var(--primary-black);
+    transition: color 0.3s ease;
+}
+
+.skill-card span {
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* Micro-interacción en Habilidades */
+.skill-card:hover {
+    transform: scale(1.08);
+    background: var(--primary-black);
+    border-color: var(--primary-black);
+}
+
+.skill-card:hover i {
+    color: var(--accent-color);
+}
+.skill-card:hover span {
+    color: white;
+}
+
+/* --- Botón de Portafolio --- */
+.btn-portfolio {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--primary-black);
+    color: white !important;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-portfolio:hover {
+    background: var(--accent-color);
+    color: var(--primary-black) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 230, 118, 0.3);
+}
+
+/* --- Media Queries (Responsivo Perfecto) --- */
+@media(max-width: 991px) {
+    .top-section {
+        padding: 40px 20px;
+    }
+    .contact-info {
+        margin-top: 25px;
+    }
+}
+
+@media(max-width: 768px) {
+    .cv-container {
+        margin: 15px;
+    }
+    .content {
+        padding: 30px 20px;
+    }
+    .section-title {
+        font-size: 26px;
+    }
+}
